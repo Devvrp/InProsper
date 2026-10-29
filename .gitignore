@@ -1,0 +1,9 @@
+/config/database.local.php
+/storage/uploads/docs/*
+!/storage/uploads/docs/.gitkeep
+/storage/uploads/products/*
+!/storage/uploads/products/.gitkeep
+.DS_Store
+Thumbs.db
+.vscode/
+.env

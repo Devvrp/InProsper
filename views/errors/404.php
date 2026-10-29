@@ -1,0 +1,1 @@
+<div class="empty-state"><div class="empty-icon">?</div><h1>Halaman tidak ditemukan</h1><p>Halaman yang kamu cari tidak tersedia.</p><a href="?page=catalog" class="btn btn-primary">Kembali ke katalog</a></div>

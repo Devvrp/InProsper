@@ -1,0 +1,1 @@
+<div class="empty-state"><div class="empty-icon">×</div><h1>Akses ditolak</h1><p>Halaman ini hanya tersedia untuk peran pengguna tertentu.</p><a href="?page=catalog" class="btn btn-primary">Kembali ke katalog</a></div>
