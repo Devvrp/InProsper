@@ -22,6 +22,56 @@ Starter implementasi berbasis PHP native + MySQL yang diturunkan dari DPPL Kelom
 4. Dari terminal di folder proyek, jalankan `php database/seed.php` untuk membuat akun demo dan data produk contoh.
 5. Jalankan `php -S localhost:8000` dan buka `http://localhost:8000`.
 
+## Persiapan Lokal (XAMPP)
+
+Alternatif dari panduan Laragon di atas untuk yang memakai XAMPP. Perintah proyeknya sama; yang berbeda hanya cara menjalankan MySQL dan PHP.
+
+## Prasyarat
+
+- [XAMPP](https://www.apachefriends.org/) dengan PHP 8.1 atau lebih baru
+- [Git](https://git-scm.com/)
+
+## Langkah-langkah
+
+1. **Jalankan MySQL**
+
+   Buka XAMPP Control Panel, lalu klik **Start** pada modul **MySQL**. Apache tidak wajib karena aplikasi dijalankan dengan server bawaan PHP (langkah 5).
+
+2. **Pastikan perintah `php` bisa dipakai di terminal**
+
+   ```bash
+   php -v
+   ```
+
+   Jika perintah tidak dikenali, tambahkan `C:\xampp\php` ke environment variable `Path` Windows, lalu buka ulang terminal. Pastikan versinya 8.1 atau lebih baru.
+
+3. **Siapkan konfigurasi database**
+
+   Salin `config/database.example.php` menjadi `config/database.local.php`, lalu sesuaikan. Pada XAMPP bawaan: host `localhost`, port `3306`, username `root`, password kosong. File lokal ini diabaikan oleh Git sehingga kredensial tidak ikut terunggah.
+
+4. **Impor skema dan data contoh**
+
+   Buka `http://localhost/phpmyadmin`, pilih tab **Import**, lalu pilih `database/schema.sql` dan klik **Import**. Skrip ini otomatis membuat database `inprosper_db` beserta tabelnya. Setelah itu, dari terminal di folder proyek:
+
+   ```bash
+   php database/seed.php
+   ```
+
+5. **Jalankan aplikasi**
+
+   ```bash
+   php -S localhost:8000
+   ```
+
+   Lalu buka `http://localhost:8000`.
+
+## Pemecahan Masalah
+
+- **MySQL tidak mau start:** port 3306 mungkin dipakai layanan MySQL lain. Hentikan layanan tersebut atau ubah port MySQL di XAMPP (dan samakan di `config/database.local.php`).
+- **Koneksi database gagal:** periksa host, port, username, password, dan nama database di `config/database.local.php`, dan pastikan MySQL sedang berjalan.
+- **`php` tidak dikenali:** lihat langkah 2.
+- **Port 8000 sudah terpakai:** jalankan dengan port lain, misalnya `php -S localhost:8080`.
+
 ## Akun demo
 
 - Admin: `admin@inprosper.test` / `Admin123!`
